@@ -1,0 +1,1 @@
+Haskell interpreter written in Haskell including Type Synthesizer. The full specifications can be found in the file "Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming].htm" and sample input in 'input.in'

@@ -1,0 +1,700 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#hasChild -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#hasChild">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isChild"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#hasFigure -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#hasFigure"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#hasInhabitant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#hasInhabitant">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#livesIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#hasSex -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#hasSex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sex"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isChild -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isChild"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isFigureIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isFigureIn">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Civilisation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isHusband -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isHusband">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isLover"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isWife"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isLover -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isLover">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isSibling -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isSibling">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isWife -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isWife">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isLover"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#livesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#livesIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Places"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#hasTemples -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#hasTemples">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isFoundAtHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isFoundAtHeight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Places"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Amazons -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Amazons">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#NotableWomen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#BigamousFigure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#BigamousFigure">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isLover"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Civilisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Civilisation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Demigods -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Demigods">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Mortal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isChild"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Immortal"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isChild"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Mortal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Giants -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Giants">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Immortal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Humans -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Humans">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Mortal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Immortal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Immortal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Inferno -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Inferno">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Places"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Kings -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Kings">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Mortal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Mortal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Mortal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MythologicalFigure"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#NotableWomen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#NotableWomen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Mortal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Immortal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Places -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Places"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#PrimordialDeities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#PrimordialDeities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Immortal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Places"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sex -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sex"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sky -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sky">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Places"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Immortal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#isChild"/>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#PrimordialDeities"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Immortal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Village -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Village">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Places"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Aegea -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Aegea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Amazons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Aegean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Aegean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sea"/>
+        <isFoundAtHeight rdf:datatype="&xsd;integer">0</isFoundAtHeight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Apollo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Apollo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <hasTemples rdf:datatype="&xsd;integer">20</hasTemples>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Leto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Artemis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Artemis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Leto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Atlas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Atlas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Clymene"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Iapetus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Clymene -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Clymene">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#FemaleSex"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Gaea"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Uranus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Coeus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Coeus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Gaea"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MaleSex"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Uranus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Epimetheus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Epimetheus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Clymene"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Iapetus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#FemaleSex -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#FemaleSex">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Gaea -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Gaea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#PrimordialDeities"/>
+        <hasChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Kronos"/>
+        <hasChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Rhea"/>
+        <isWife rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Uranus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Greek -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Greek">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Civilisation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Hades -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Hades">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Kronos"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Rhea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Hera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Hera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#FemaleSex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Heracle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Heracle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Mortal"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#HeraclesMom"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Zeus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#HeraclesMom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#HeraclesMom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Humans"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Hestia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Hestia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Kronos"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Rhea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Hyperion -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Hyperion">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Gaea"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MaleSex"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Uranus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Iapetus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Iapetus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Gaea"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MaleSex"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Uranus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Jupiter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Jupiter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <isFigureIn rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Roman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Kronos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Kronos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MaleSex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Leto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Leto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Coeus"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Phoebe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MaleSex -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MaleSex">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Oceanus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Oceanus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans"/>
+        <livesIn rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Aegean"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#MaleSex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Pandora -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Pandora">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Clymene"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Iapetus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Phoebe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Phoebe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#FemaleSex"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Gaea"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Uranus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Rhea -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Rhea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#FemaleSex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Roman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Roman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Civilisation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Tartarus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Tartarus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Inferno"/>
+        <isFoundAtHeight rdf:datatype="&xsd;integer">-10000</isFoundAtHeight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Thea -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Thea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans"/>
+        <hasSex rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#FemaleSex"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Gaea"/>
+        <isChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Uranus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Uranus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Uranus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#PrimordialDeities"/>
+        <hasChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Kronos"/>
+        <hasChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Oceanus"/>
+        <hasChild rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Rhea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Zeus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Zeus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+        <hasTemples rdf:datatype="&xsd;integer">30</hasTemples>
+        <isHusband rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Hera"/>
+        <isLover rdf:resource="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Leto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Inferno"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sea"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Sky"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Village"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#OlympianDeities"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#PrimordialDeities"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2013/0/Ontology1358687816171.owl#Titans"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

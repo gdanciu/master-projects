@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://elf.cs.pub.ro/tsfp/labs/type-synthesis -->
+<html lang="en" dir="ltr" class="js desktop"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+    <title>Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-12-20T16:23:44+0200">
+<meta name="keywords" content="labs,type-synthesis">
+<link rel="search" type="application/opensearchdescription+xml" href="http://elf.cs.pub.ro/tsfp/lib/exe/opensearch.php" title="Type Systems and Functional Programming">
+<link rel="start" href="http://elf.cs.pub.ro/tsfp/">
+<link rel="contents" href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis?do=index" title="Sitemap">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://elf.cs.pub.ro/tsfp/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://elf.cs.pub.ro/tsfp/feed.php?mode=list&ns=labs">
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://elf.cs.pub.ro/tsfp/_export/xhtml/labs/type-synthesis">
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://elf.cs.pub.ro/tsfp/_export/raw/labs/type-synthesis">
+<link rel="canonical" href="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming].htm">
+<link rel="stylesheet" type="text/css" href="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/css.php">
+<script type="text/javascript">/*<![CDATA[*/var NS='labs';var JSINFO = {"id":"labs:type-synthesis","namespace":"labs"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/js.php"></script>
+<script type="text/javascript" charset="utf-8" src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/menu.js"></script>
+<script type="text/javascript" charset="utf-8" src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/indexmenu.js"></script>
+<script type="text/javascript" charset="utf-8">/*<![CDATA[*/var indexmenu_ID='labs/type-synthesis'
+/*!]]>*/</script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="http://elf.cs.pub.ro/tsfp/lib/tpl/dokuwiki/images/favicon.ico">
+<link rel="apple-touch-icon" href="http://elf.cs.pub.ro/tsfp/lib/tpl/dokuwiki/images/apple-touch-icon.ico">
+    <script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/menu_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/change_sink.js"></script><meta name="document_iterator.js"><meta name="find_proxy.js"><meta name="get_html_text.js"><meta name="global_constants.js"><meta name="name_injection_builder.js"><meta name="number_injection_builder.js"><meta name="menu_injection_builder.js"><meta name="string_finder.js"><meta name="change_sink.js"></head>
+
+<body>
+    <!--[if lte IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="dokuwiki site mode_show showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis#dokuwiki__content">skip to content</a></li>
+        </ul>
+
+        <h1><a href="http://elf.cs.pub.ro/tsfp/home" accesskey="h" title="[H]"><img src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/logo.png" width="64" height="64" alt=""> <span>Type Systems and Functional Programming</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis?do=login&sectok=515fd6c1c3246bf04651b594012aac0e" class="action login" rel="nofollow" title="Login">Login</a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="http://elf.cs.pub.ro/tsfp/home" accept-charset="utf-8" class="search" id="dw__search" method="get"><div class="no"><input type="hidden" name="do" value="search"><input type="text" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]"><input type="submit" value="Search" class="button" title="Search"><div id="qsearch__out" class="ajax_qsearch JSpopup" style="display: none;"></div></div></form>            <div class="mobileTools">
+                <form action="http://elf.cs.pub.ro/tsfp/labs/doku.php" method="post" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="labs:type-synthesis"><input type="hidden" name="sectok" value="515fd6c1c3246bf04651b594012aac0e"><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Show pagesource</option><option value="revisions">Old revisions</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Recent changes</option><option value="media">Media Manager</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="login">Login</option></optgroup></select><input type="submit" value="&gt;" style="display: none;"></div></form>            </div>
+            <ul>
+                <li><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis?do=recent" class="action recent" accesskey="r" rel="nofollow" title="Recent changes [R]">Recent changes</a></li><li><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis?do=media" class="action media" rel="nofollow" title="Media Manager">Media Manager</a></li><li><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis?do=index" class="action index" accesskey="x" rel="nofollow" title="Sitemap [X]">Sitemap</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                            <div class="youarehere"><span class="bchead">You are here: </span><a href="http://elf.cs.pub.ro/tsfp/home" class="wikilink1" title="home">Type Systems and Functional Programming</a> » <a href="http://elf.cs.pub.ro/tsfp/labs/home" class="wikilink1" title="labs:home">Labs</a> » <span class="curid"><a href="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming].htm" class="wikilink1" title="labs:type-synthesis">Type Synthesizer for the Polymorphic Lambda Calculus</a></span></div>
+                                </div>
+    
+    
+    <hr class="a11y">
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad include group">
+                    <h3 class="toggle open" style="cursor: pointer; display: none;"><strong><span>−</span></strong>Sidebar</h3>
+                    <div class="content" style="">
+                                                                        
+<h2 class="sectionedit1" id="lectures">Lectures</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://elf.cs.pub.ro/tsfp/_media/lectures/notes.zip" class="media mediafile mf_zip" title="lectures:notes.zip">Notes</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="http://elf.cs.pub.ro/tsfp/_media/lectures/slides.pdf" class="media mediafile mf_pdf" title="lectures:slides.pdf">Slides</a> (v5)</div>
+</li>
+<li class="level0"><div class="li"> <a href="http://elf.cs.pub.ro/tsfp/_media/lectures/handouts.pdf" class="media mediafile mf_pdf" title="lectures:handouts.pdf">Handouts</a> (v5)</div>
+</li>
+<li class="level0"><div class="li"> <a href="http://elf.cs.pub.ro/tsfp/_media/lectures/code.zip" class="media mediafile mf_zip" title="lectures:code.zip">Code</a> (v2)</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "Lectures" [1-166] -->
+<h2 class="sectionedit2" id="labs">Labs</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> <a href="http://elf.cs.pub.ro/tsfp/labs/scheme" class="wikilink1" title="labs:scheme">Scheme</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="http://elf.cs.pub.ro/tsfp/labs/textual-substitution" class="wikilink1" title="labs:textual-substitution">Interpreter for the Untyped Lambda Calculus - Textual Substitution</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="http://elf.cs.pub.ro/tsfp/labs/haskell" class="wikilink1" title="labs:haskell">Haskell</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="http://elf.cs.pub.ro/tsfp/labs/contextual-evaluation" class="wikilink1" title="labs:contextual-evaluation">Interpreter for the Untyped Lambda Calculus - Contextual Evaluation</a></div>
+</li>
+<li class="level0"><div class="li"> <a href="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming].htm" class="wikilink1" title="labs:type-synthesis">Type Synthesizer for the Polymorphic Lambda Calculus</a></div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT2 SECTION "Labs" [167-307] -->
+<h2 class="sectionedit3" id="grades">Grades</h2>
+<div class="level2">
+
+<p>
+<a href="https://docs.google.com/spreadsheet/pub?key=0AlUFDFQjxSJodHBjcEh0UWlJSHdEQWdLSDZ2LURJSkE&output=html" class="urlextern" title="https://docs.google.com/spreadsheet/pub?key=0AlUFDFQjxSJodHBjcEh0UWlJSHdEQWdLSDZ2LURJSkE&amp;output=html" rel="nofollow">Grade sheet</a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Grades" [308-] -->                                            </div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+
+                <div class="pageId"><span>labs:type-synthesis</span></div>
+
+                <div class="page group" style="min-height: 361px;">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle open" style="cursor: pointer;"><strong><span>−</span></strong>Table of Contents</h3>
+<div style="">
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis#type-synthesizer-for-the-polymorphic-lambda-calculus">Type Synthesizer for the Polymorphic Lambda Calculus</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis#objectives">Objectives</a></div></li>
+<li class="level2"><div class="li"><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis#usage">Usage</a></div></li>
+<li class="level2"><div class="li"><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis#implementation">Implementation</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis#unification">Unification</a></div></li>
+<li class="level3"><div class="li"><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis#strongweak-polymorphism">Strong/weak polymorphism</a></div></li>
+<li class="level3"><div class="li"><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis#recommended-steps">Recommended steps</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="type-synthesizer-for-the-polymorphic-lambda-calculus">Type Synthesizer for the Polymorphic Lambda Calculus</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit2" id="objectives">Objectives</h2>
+<div class="level2">
+
+<p>
+The taget of this lab activity is the implementation of a type synthesizer for the Polymorphic Lambda Calculus (System F), seen as programming language. The resulting module will be integrated with the previously implemented <a href="http://elf.cs.pub.ro/tsfp/labs/contextual-evaluation" class="wikilink1" title="labs:contextual-evaluation">interpreter</a>, and will ensure the typing process, prior to evaluation.
+</p>
+
+<p>
+The language specification can be found in the lecture notes, <code>Synthesis Example.pdf</code>, page 3.
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="usage">Usage</h2>
+<div class="level2">
+
+<p>
+The synthesizer shall supply a <strong>typing function</strong>, such as <code>inferTypes</code>, which receives the name of the <strong>input file</strong> and returns a <strong>list of strings</strong>, representing the <strong>types</strong> of the program expressions. An example program and the corresponding output are shown below:
+</p>
+<div class="table"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"> <dl class="code">
+<dt><a href="http://elf.cs.pub.ro/tsfp/_export/code/labs/type-synthesis?codeblock=0" title="Download Snippet" class="mediafile mf_in">Prog.in</a></dt>
+<dd><pre class="code haskell">a
+<span class="br0">(</span>a b<span class="br0">)</span>
+true<span class="sy0">=</span>\x<span class="sy0">.</span>\y<span class="sy0">.</span>x 
+false<span class="sy0">=</span>\x<span class="sy0">.</span>\y<span class="sy0">.</span>y 
+&nbsp;
+<a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:not"><span class="kw3">not</span></a><span class="sy0">=</span>\x<span class="sy0">.</span><span class="br0">(</span><span class="br0">(</span>x false<span class="br0">)</span> true<span class="br0">)</span>
+<span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:not"><span class="kw3">not</span></a> true<span class="br0">)</span> 
+<span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:not"><span class="kw3">not</span></a> false<span class="br0">)</span>
+&nbsp;
+<a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:and"><span class="kw3">and</span></a><span class="sy0">=</span>\x<span class="sy0">.</span>\y<span class="sy0">.</span><span class="br0">(</span><span class="br0">(</span>x y<span class="br0">)</span> false<span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:and"><span class="kw3">and</span></a> true<span class="br0">)</span> true<span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:and"><span class="kw3">and</span></a> true<span class="br0">)</span> false<span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:and"><span class="kw3">and</span></a> false<span class="br0">)</span> true<span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:and"><span class="kw3">and</span></a> false<span class="br0">)</span> false<span class="br0">)</span>
+&nbsp;
+<a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:or"><span class="kw3">or</span></a><span class="sy0">=</span>\x<span class="sy0">.</span>\y<span class="sy0">.</span><span class="br0">(</span><span class="br0">(</span>x true<span class="br0">)</span> y<span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:or"><span class="kw3">or</span></a> true<span class="br0">)</span> true<span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:or"><span class="kw3">or</span></a> true<span class="br0">)</span> false<span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:or"><span class="kw3">or</span></a> false<span class="br0">)</span> true<span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:or"><span class="kw3">or</span></a> false<span class="br0">)</span> false<span class="br0">)</span>
+&nbsp;
+nil<span class="sy0">=</span>\x<span class="sy0">.</span>true
+<a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:null"><span class="kw3">null</span></a><span class="sy0">=</span>\l<span class="sy0">.</span><span class="br0">(</span>l \x<span class="sy0">.</span>\y<span class="sy0">.</span>false<span class="br0">)</span>
+cons<span class="sy0">=</span>\x<span class="sy0">.</span>\y<span class="sy0">.</span>\z<span class="sy0">.</span><span class="br0">(</span><span class="br0">(</span>z x<span class="br0">)</span> y<span class="br0">)</span>
+car<span class="sy0">=</span>\l<span class="sy0">.</span><span class="br0">(</span>l true<span class="br0">)</span>
+cdr<span class="sy0">=</span>\l<span class="sy0">.</span><span class="br0">(</span>l false<span class="br0">)</span>
+<span class="kw1">if</span><span class="sy0">=</span>\p<span class="sy0">.</span>\<span class="kw1">then</span><span class="sy0">.</span>\<span class="kw1">else</span><span class="sy0">.</span><span class="br0">(</span><span class="br0">(</span>p <span class="kw1">then</span><span class="br0">)</span> <span class="kw1">else</span><span class="br0">)</span></pre>
+</dd></dl>
+
+
+</td><td class="col1"> <dl class="code">
+<dt><a href="http://elf.cs.pub.ro/tsfp/_export/code/labs/type-synthesis?codeblock=1" title="Download Snippet" class="mediafile mf_">Type reconstruction</a></dt>
+<dd><pre class="code haskell">t0
+t4
+<span class="br0">(</span>t6<span class="sy0">-&gt;</span><span class="br0">(</span>t7<span class="sy0">-&gt;</span>t6<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span>t9<span class="sy0">-&gt;</span><span class="br0">(</span>t10<span class="sy0">-&gt;</span>t10<span class="br0">)</span><span class="br0">)</span>
+&nbsp;
+<span class="br0">(</span><span class="br0">(</span><span class="br0">(</span>t13<span class="sy0">-&gt;</span><span class="br0">(</span>t14<span class="sy0">-&gt;</span>t14<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span><span class="br0">(</span><span class="br0">(</span>t17<span class="sy0">-&gt;</span><span class="br0">(</span>t18<span class="sy0">-&gt;</span>t17<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span>t20<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span>t20<span class="br0">)</span>
+<span class="br0">(</span>t21<span class="sy0">-&gt;</span><span class="br0">(</span>t22<span class="sy0">-&gt;</span>t22<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span>t32<span class="sy0">-&gt;</span><span class="br0">(</span>t33<span class="sy0">-&gt;</span>t32<span class="br0">)</span><span class="br0">)</span>
+&nbsp;
+<span class="br0">(</span><span class="br0">(</span>t41<span class="sy0">-&gt;</span><span class="br0">(</span><span class="br0">(</span>t44<span class="sy0">-&gt;</span><span class="br0">(</span>t45<span class="sy0">-&gt;</span>t45<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span>t47<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span><span class="br0">(</span>t41<span class="sy0">-&gt;</span>t47<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span>t56<span class="sy0">-&gt;</span><span class="br0">(</span>t57<span class="sy0">-&gt;</span>t56<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span>t68<span class="sy0">-&gt;</span><span class="br0">(</span>t69<span class="sy0">-&gt;</span>t69<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span>t73<span class="sy0">-&gt;</span><span class="br0">(</span>t74<span class="sy0">-&gt;</span>t74<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span>t85<span class="sy0">-&gt;</span><span class="br0">(</span>t86<span class="sy0">-&gt;</span>t86<span class="br0">)</span><span class="br0">)</span>
+&nbsp;
+<span class="br0">(</span><span class="br0">(</span><span class="br0">(</span>t99<span class="sy0">-&gt;</span><span class="br0">(</span>t100<span class="sy0">-&gt;</span>t99<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span><span class="br0">(</span>t98<span class="sy0">-&gt;</span>t104<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span><span class="br0">(</span>t98<span class="sy0">-&gt;</span>t104<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span>t105<span class="sy0">-&gt;</span><span class="br0">(</span>t106<span class="sy0">-&gt;</span>t105<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span>t117<span class="sy0">-&gt;</span><span class="br0">(</span>t118<span class="sy0">-&gt;</span>t117<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span>t137<span class="sy0">-&gt;</span><span class="br0">(</span>t138<span class="sy0">-&gt;</span>t137<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span>t149<span class="sy0">-&gt;</span><span class="br0">(</span>t150<span class="sy0">-&gt;</span>t150<span class="br0">)</span><span class="br0">)</span>
+&nbsp;
+<span class="br0">(</span>t154<span class="sy0">-&gt;</span><span class="br0">(</span>t155<span class="sy0">-&gt;</span><span class="br0">(</span>t156<span class="sy0">-&gt;</span>t155<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><span class="br0">(</span>t159<span class="sy0">-&gt;</span><span class="br0">(</span>t160<span class="sy0">-&gt;</span><span class="br0">(</span>t161<span class="sy0">-&gt;</span><span class="br0">(</span>t162<span class="sy0">-&gt;</span>t162<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span>t164<span class="br0">)</span><span class="sy0">-&gt;</span>t164<span class="br0">)</span>
+<span class="br0">(</span>t166<span class="sy0">-&gt;</span><span class="br0">(</span>t167<span class="sy0">-&gt;</span><span class="br0">(</span><span class="br0">(</span>t166<span class="sy0">-&gt;</span><span class="br0">(</span>t167<span class="sy0">-&gt;</span>t172<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span>t172<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><span class="br0">(</span>t175<span class="sy0">-&gt;</span><span class="br0">(</span>t176<span class="sy0">-&gt;</span>t175<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span>t178<span class="br0">)</span><span class="sy0">-&gt;</span>t178<span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span><span class="br0">(</span>t181<span class="sy0">-&gt;</span><span class="br0">(</span>t182<span class="sy0">-&gt;</span>t182<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span>t184<span class="br0">)</span><span class="sy0">-&gt;</span>t184<span class="br0">)</span>
+<span class="br0">(</span><span class="br0">(</span>t187<span class="sy0">-&gt;</span><span class="br0">(</span>t188<span class="sy0">-&gt;</span>t192<span class="br0">)</span><span class="br0">)</span><span class="sy0">-&gt;</span><span class="br0">(</span>t187<span class="sy0">-&gt;</span><span class="br0">(</span>t188<span class="sy0">-&gt;</span>t192<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span></pre>
+</dd></dl>
+
+
+</td>
+	</tr>
+</tbody></table></div>
+
+
+
+<p>
+The numbers above are generated by a <strong>counter</strong>, used to spawn unique <strong>type variables</strong>.
+</p>
+
+<p>
+The <strong>errors</strong> that the synthesizer must signal are the following:
+</p>
+<ul>
+<li class="level1"><div class="li"> Within an <strong>application</strong>:</div>
+<ul>
+<li class="level1"><div class="li"> The <strong>impossibility</strong> of inferring a <strong>function type</strong> for the left subexpression</div>
+</li>
+<li class="level1"><div class="li"> The <strong>incompatibility</strong> between the type of the <strong>formal</strong> function argument and the type of its <strong>actual</strong> argument</div>
+</li>
+</ul>
+</li>
+<li class="level0"><div class="li"> <strong>Infinite</strong> types. For example, in the expression <code>\x.(x x)</code>, <code>x</code> is both a <strong>function</strong>, with the type <code>(a → b)</code>, and its own <strong>argument</strong>, with type <code>a</code>. The equation <code>(a → b) = a</code> leads to the infinite type <code>((…((a → b) → b) → …) → b)</code>.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="implementation">Implementation</h2>
+<div class="level2">
+
+<p>
+The <strong>type inference</strong> process involves:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>generating</strong> type variables for program expressions</div>
+</li>
+<li class="level0"><div class="li"> <strong>unifiying</strong> the resulting type expressions, according to the category of the program expressions.</div>
+</li>
+</ul>
+
+<p>
+Intuitively, for checking if an application <code>(f x)</code> is <strong>typable</strong>, it suffices to:
+</p>
+<ul>
+<li class="level1"><div class="li"> represent the type of <code>f</code> as <code>(a → b)</code></div>
+</li>
+<li class="level0"><div class="li"> identify a <strong>common</strong> representation of the type <code>a</code> of the formal argument of <code>f</code> and the type <code>c</code> of <code>x</code>.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit5" id="unification">Unification</h3>
+<div class="level3">
+
+<p>
+As a first example, let us assume that we wish to identify a <strong>common representation</strong> for the types <code>(a, int)</code> and <code>([c], b)</code>, where the meaning of the parantheses are taken from Haskell, and <code>int</code> is the type of integers. Notice that, by <strong>binding</strong> the type variable <code>a</code> to type <code>[c]</code>, and the type variable <code>b</code> to type <code>int</code>, we get the common type <code>t = ([c], int)</code>, which still contains type variables. Here, <code>t</code> is the <strong><em>most general type</em></strong> resulting from the unification of the two expressions.
+</p>
+
+<p>
+Thus, the unification process aims at determining a <strong>set of bindings</strong> of type variables to other types; this set is called a <strong><em>substitution</em></strong>. In the example above, the result is <code>S = {[c]/a, int/b}</code> (<code>a</code>  is bound to <code>[c]</code>, etc.). The substitution that leads to the most general common type of two expressions is called the <strong><em>most general unifier</em></strong> of the two expressions. We say that the types <code>a</code> and <code>b</code> <strong>unify</strong> under the substitution <code>S</code> iff, by performing the <strong>replacements</strong> dictated by the bindings, within both types, we obtain the <strong>same type</strong>: <code>a unify(S) b ⇔ a/S = b/S</code>.
+</p>
+
+<p>
+Keep in mind that is it is possible to build <strong>binding chains</strong>, such as <code>{b/a, c/b, d/c, (e → f)/d, g/e}</code>, where the final binding of <code>a</code> is to <code>(g → f)</code>. Thus, in order to correctly unify types, and <strong>distinguish</strong> between their actual forms (free type variable, function type, etc.), the chain <strong>ends</strong> need to be explored. For example, the end of the chain of <code>a</code> is <code>(e → f)</code> — this is enough to point out that <code>a</code> is bound to a function type. The exploration may stop when either of the following is reached:
+</p>
+<ul>
+<li class="level1"><div class="li"> a <strong>variable free</strong> within the substitution</div>
+</li>
+<li class="level0"><div class="li"> a <strong>function type</strong>.</div>
+</li>
+</ul>
+
+<p>
+The possible <strong>situations</strong> encountered during unification are enumerated below. The discussion holds w.r.t. chain <strong>ends</strong>.
+</p>
+<ul>
+<li class="level1"><div class="li"> Two <strong>free variables</strong>, <code>a</code> and <code>b</code>, <strong>always</strong> unify (they may even be identical).</div>
+</li>
+<li class="level0"><div class="li"> A <strong>free variable</strong> and a <strong>function type</strong>, <code>a</code> and <code>(b → c)</code>, unify if <code>a</code> does <strong>not</strong> occur within either <code>b</code> or <code>c</code> (actually, within the types to which they are bound). Otherwise, <strong>infinite</strong> types would result. For avoiding this issue, an <strong><em>occurrence check</em></strong> must be performed.</div>
+</li>
+<li class="level0"><div class="li"> Two <strong>function types</strong>, <code>(a → b)</code> and <code>(c → d)</code>, unify if <code>a</code> unifies with <code>c</code>, and <code>b</code> with <code>d</code>.</div>
+</li>
+</ul>
+
+<p>
+<strong>Exemples</strong>:
+</p>
+
+<p>
+The statement <code>{type/var}</code> reads: <em>the type variable <code>var</code> is bound to the type <code>type</code></em>.
+</p>
+<div class="table sectionedit6"><table class="inline">
+	<tbody><tr class="row0">
+		<th class="col0 rightalign">  Type 1 </th><th class="col1 centeralign">  Type 2    </th><th class="col2 centeralign">  Initial substitution  </th><th class="col3 centeralign">  Result  </th><th class="col4 centeralign">  Final substitution         </th><th class="col5 centeralign">  Comments                               </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 centeralign">  a      </td><td class="col1 centeralign">  a         </td><td class="col2 centeralign">  {}                    </td><td class="col3 centeralign">  True    </td><td class="col4 centeralign">  {}                         </td><td class="col5 centeralign">  same variable                        </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  a      </td><td class="col1 centeralign">  b         </td><td class="col2 centeralign">  {}                    </td><td class="col3 centeralign">  True    </td><td class="col4 centeralign">  {b/a} or {a/b}             </td><td class="col5 centeralign">  2 free variables                       </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  a      </td><td class="col1 centeralign">  b         </td><td class="col2 centeralign">  {c/a}                 </td><td class="col3 centeralign">  True    </td><td class="col4 centeralign">  {b/c, c/a} or {c/b, c/a}   </td><td class="col5 centeralign">  2 free variables                       </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  a      </td><td class="col1 centeralign">  (b → c)  </td><td class="col2 centeralign">  {}                    </td><td class="col3 centeralign">  True    </td><td class="col4 centeralign">  {(b → c)/a}               </td><td class="col5 centeralign">  free variable and function type          </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  a      </td><td class="col1 centeralign">  (a → c)  </td><td class="col2 centeralign">  {}                    </td><td class="col3 centeralign">  False   </td><td class="col4 centeralign">  -                          </td><td class="col5 centeralign">  failed occurrence check                  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  a      </td><td class="col1 centeralign">  (b → a)  </td><td class="col2 centeralign">  {}                    </td><td class="col3 centeralign">  False   </td><td class="col4 centeralign">  -                          </td><td class="col5 centeralign">  failed occurrence check                  </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">  a      </td><td class="col1 centeralign">  (b → c)  </td><td class="col2 centeralign">  {a/b}                 </td><td class="col3 centeralign">  False   </td><td class="col4 centeralign">  -                          </td><td class="col5 centeralign">  failed occurrence check                  </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h3 class="sectionedit7" id="strongweak-polymorphism">Strong/weak polymorphism</h3>
+<div class="level3">
+
+<p>
+Assume the following Haskell snippets:
+</p>
+<dl class="code">
+<dt><a href="http://elf.cs.pub.ro/tsfp/_export/code/labs/type-synthesis?codeblock=2" title="Download Snippet" class="mediafile mf_">Strong polymorphism</a></dt>
+<dd><pre class="code haskell">f x y <span class="sy0">=</span> <span class="br0">(</span> <span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:id"><span class="kw3">id</span></a> x<span class="br0">)</span><span class="sy0">,</span> <span class="br0">(</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:id"><span class="kw3">id</span></a> y<span class="br0">)</span> <span class="br0">)</span> <span class="co1">-- id is identity function in Haskell</span>
+&nbsp;
+<span class="sy0">&gt;</span> :t <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:id"><span class="kw3">id</span></a>
+a <span class="sy0">-&gt;</span> a
+&nbsp;
+<span class="sy0">&gt;</span> :t f
+f <span class="sy0">::</span> a <span class="sy0">-&gt;</span> b <span class="sy0">-&gt;</span> <span class="br0">(</span>a<span class="sy0">,</span> b<span class="br0">)</span>
+&nbsp;
+<span class="sy0">&gt;</span> f <span class="nu0">2</span> <span class="nu0">3</span>
+<span class="br0">(</span><span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">3</span><span class="br0">)</span>
+&nbsp;
+<span class="sy0">&gt;</span> f <span class="nu0">2</span> True
+<span class="br0">(</span><span class="nu0">2</span><span class="sy0">,</span> True<span class="br0">)</span></pre>
+</dd></dl>
+<dl class="code">
+<dt><a href="http://elf.cs.pub.ro/tsfp/_export/code/labs/type-synthesis?codeblock=3" title="Download Snippet" class="mediafile mf_">Weak polymorphism</a></dt>
+<dd><pre class="code haskell">f1 g x y <span class="sy0">=</span> <span class="br0">(</span> <span class="br0">(</span>g x<span class="br0">)</span><span class="sy0">,</span> <span class="br0">(</span>g y<span class="br0">)</span> <span class="br0">)</span>
+&nbsp;
+<span class="sy0">&gt;</span> :t f1
+f1 <span class="sy0">::</span> <span class="br0">(</span>a <span class="sy0">-&gt;</span> b<span class="br0">)</span> <span class="sy0">-&gt;</span> a <span class="sy0">-&gt;</span> a <span class="sy0">-&gt;</span> <span class="br0">(</span>b<span class="sy0">,</span> b<span class="br0">)</span>
+&nbsp;
+<span class="sy0">&gt;</span> f1 <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:id"><span class="kw3">id</span></a> <span class="nu0">2</span> <span class="nu0">3</span>
+<span class="br0">(</span><span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">3</span><span class="br0">)</span>
+&nbsp;
+<span class="sy0">&gt;</span> f1 <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:id"><span class="kw3">id</span></a> <span class="nu0">2</span> True
+<span class="sy0">&lt;</span><span class="kw1">type</span> error<span class="sy0">&gt;</span></pre>
+</dd></dl>
+
+<p>
+The <strong>difference</strong> between the two snippets resides in the way of <strong>supplying</strong> the function applied onto the arguments <code>x</code> and <code>y</code>:
+</p>
+<ul>
+<li class="level1"><div class="li"> In the <strong>first</strong> case, the function is mentioned <strong>explicitly</strong>. It is polymorphic and adapts to the type of its actual argument, on <strong>each</strong> application within the definition. We say that the top-level variables are <strong>strongly polymorphic</strong> or, equivalently, that the type variables from within their signature are <strong>universally</strong> quantified. Thus, we may read the type of <code>f</code> as <code>∀a.(a → a)</code>.</div>
+</li>
+<li class="level0"><div class="li"> In the <strong>second</strong> case, the function is passed as an <strong>argument</strong>. In contrast to the first case, this can be thought of as having a single function “instance”. When the function is <strong>first</strong> applied, within the definition, the type variables in its <strong>signature</strong> become bound. In the snippets above, when <code>g</code> is applied onto <code>2</code>, the type of its argument remains bound to <code>Int</code>, which leads to an error when attempting to apply <code>g</code> once again, but this time onto <code>True</code>. We say that the formal function arguments are <strong>weakly polymorphic</strong> or, equivalently, that the type variables from within their signature are <strong>free</strong>. Thus, we may read the type of <code>g</code>, when the actual argument is <code>id</code>, as simply <code>(a → a)</code>, with no quantification involved.</div>
+</li>
+</ul>
+
+<p>
+The <strong>behavior</strong> from the first case is obtained by <strong>copying</strong> the expression signature, for <strong>each</strong> of its <strong>occurrences</strong>. This way, the type variables are replaced with new ones, independent from the former. For example, in the first snippet above, we may think that the first occurrence of <code>id</code> has the type <code>(a → a)</code> and the second one, <code>(b → b)</code>. This is the purpose of the <code>copy</code> function in the <code>TVar</code>' synthesis rule, in <code>Synthesis Example.pdf</code>.
+</p>
+
+</div>
+
+<h3 class="sectionedit8" id="recommended-steps">Recommended steps</h3>
+<div class="level3">
+
+<p>
+You may start with this skeleton. <img src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/fixme.gif" class="icon" alt="FIXME">
+</p>
+
+<p>
+The recommended implementation <strong>steps</strong> are the following:
+</p>
+<ol>
+<li class="level1"><div class="li"> Define a Haskell <strong>data type</strong> for representing types from System F. This applies only to <strong>type variables</strong> and <strong>function types</strong>, since our language does not yet contain any base types.</div>
+</li>
+<li class="level0"><div class="li"> Implement the <strong><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis#unification" title="labs:type-synthesis ↵" class="wikilink1">unification</a></strong> mechanism, including the <strong><em>occurrence check</em></strong> support.</div>
+</li>
+<li class="level0"><div class="li"> Implement the type synthesis <strong>rules</strong>.</div>
+<ul>
+<li class="level1"><div class="li"> The <strong>typing contexts</strong> store typing hypotheses regarding <strong>program variables</strong> and their <strong>types</strong>. A separation between the <strong>dynamic</strong> and <strong>lexical</strong> contexts is required.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Substitutions</strong> are local to <strong>each</strong> expression.</div>
+</li>
+<li class="level1"><div class="li"> While <strong>contexts</strong> map <strong>program variables</strong> to their types, <strong>substitutions</strong> map <strong>type variables</strong> to other types!</div>
+</li>
+<li class="level1"><div class="li"> While the <strong>lexical contexts</strong> are enriched while recursing <strong>forward</strong>, <strong>substitutions</strong> are enriched on the way <strong>back</strong>.</div>
+</li>
+<li class="level1"><div class="li"> The typing rules for <strong>variables</strong> may be stated as below:</div>
+<ul>
+<li class="level2"><div class="li"> If a variable is located within the <strong>lexical context</strong>, its type is returned <strong>as is</strong>.</div>
+</li>
+<li class="level2"><div class="li"> If a variable is located within the <strong>dynamic context</strong>, its type is returned as <strong>unique copy</strong>.</div>
+</li>
+<li class="level2"><div class="li"> If a variable <strong>cannot</strong> be located within either of the two contexts, its type is <strong>generated</strong> on the spot, and is <strong>unique</strong>. For generating new type variables, you may employ a <strong>counter</strong>, which gets incremented for each generation.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> For signaling <strong>typing errors</strong>, you may employ the <strong><code>error</code></strong> function. The application <pre class="code haskell"><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:error"><span class="kw3">error</span></a> <span class="st0">"Oops!"</span></pre>
+
+<p>
+ <strong>displays</strong> the message, and <strong>ends</strong> the execution.
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo">labs/type-synthesis.txt · Last modified: 2012/12/20 16:23 by mihnea</div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y">
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis?do=edit&rev=0" class="action source" accesskey="v" rel="nofollow" title="Show pagesource [V]"><span>Show pagesource</span></a></li><li><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis?do=revisions" class="action revs" accesskey="o" rel="nofollow" title="Old revisions [O]"><span>Old revisions</span></a></li><li><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis?do=backlink" class="action backlink" rel="nofollow" title="Backlinks"><span>Backlinks</span></a></li><li><a href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis#dokuwiki__top" class="action top" accesskey="t" rel="nofollow" title="Back to top [T]"><span>Back to top</span></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="http://www.dokuwiki.org/donate" title="Donate"><img src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/button-donate.gif" width="80" height="15" alt="Donate"></a>
+        <a href="http://www.php.net/" title="Powered by PHP"><img src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/button-php.gif" width="80" height="15" alt="Powered by PHP"></a>
+        <a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0"></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS"><img src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/button-css.png" width="80" height="15" alt="Valid CSS"></a>
+        <a href="http://dokuwiki.org/" title="Driven by DokuWiki"><img src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/button-dw.png" width="80" height="15" alt="Driven by DokuWiki"></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="./Type Synthesizer for the Polymorphic Lambda Calculus [Type Systems and Functional Programming]_files/indexer.php" width="2" height="1" alt=""></div>
+    <!--[if ( lte IE 7 | IE 8 ) ]></div><![endif]-->
+
+
+</body><span id="skype_highlighting_settings" display="none" autoextractnumbers="1" hightlightingswitched="0"></span><object id="skype_plugin_object" location.href="http://elf.cs.pub.ro/tsfp/labs/type-synthesis" location.hostname="elf.cs.pub.ro" style="position: absolute; visibility: hidden; left: -100px; top: -100px;" width="0" height="0" type="application/x-vnd.skype.click2call.chrome.5.7.0"></object></html>
